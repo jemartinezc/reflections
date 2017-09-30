@@ -1,0 +1,10 @@
+What happens when you initialize a repository? Why do you need to do it?
+Thats the way git knows that this folder is a repository
+It adds a .git directory inside the repository
+The way to initilize a repository is by using the command: git intit
+
+
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+Staging area is an area that is not the working directory and its before you commit (before it is included in the repository??)
+you add file to the stating area by the command: git add file_name
+you can see the files in the staging area by using the command: git status
