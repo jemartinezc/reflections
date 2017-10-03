@@ -1,10 +1,50 @@
 What happens when you initialize a repository? Why do you need to do it?
 Thats the way git knows that this folder is a repository
 It adds a .git directory inside the repository
-The way to initilize a repository is by using the command: git intit
+The way to initilize a repository is by using the command: git init
 
 
 How is the staging area different from the working directory and the repository? What value do you think it offers?
 Staging area is an area that is not the working directory and its before you commit (before it is included in the repository??)
-you add file to the stating area by the command: git add file_name
-you can see the files in the staging area by using the command: git status
+you add file to the staging area by the command: git add file_name
+you can see the files in the staging area or the untracked files by using the command: git status
+you can add the files in staging area to the repository by using git commit
+
+git diff compares the current directory vs the staging area
+git diff -staged compares the staging area vs the commit 1 (the current commit) (the head)
+git reset --hard discards any changes in the working directory and the stating area
+
+How can you use the staging area to make sure you have one commit per logical change?
+Because you can check differences between the working directory and the staging area
+besides, you can also check differences between the stagin area and the most recent commit
+Therefore you can make sure that a file to be commited is different to the most recent commit
+
+git branch muestra los branches que hay, y muestra con un asterisco el que estamos usando
+git branch nombre_del_branch crea un nuevo branch con el nombre dado
+git checkout nombre_del_branch cambia al branch nombre_del_branch
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+Branches are helpful when you want to add new stuff to your project (for exmaple an new idea to test) and leaving master branch (original branch)
+without any changes
+
+git checkout -b new_branch_name
+es igual a correr los siguientes 2 comandos:
+git branch new_branch_name
+git checkout new_branch_name
+git log --graph --oneline master coins muestra un gráfico con master branch y easy_mode branch
+
+How do the diagrams help you visualize the branch structure?
+Branche structure is a tree; therefore, by using diagrams you can actually see the tree.
+
+git merge master coins     merge coins and master
+git merge will also include the currently checked-out branch in the merged version. So if you have branch1 checked out, and you run git merge branch2 branch3, the merged version will combine branch1 as well as branch2 and branch3.
+Since the two branches are merged, the order in which they are typed into the command line does not matter. The key is to remember that git merge always merges all the specified branches into the currently checked out branch, creating a new commit for that branch. 
+
+git show commit_id         muestra el git diff entre el padre de commit_id y commit_id
+git branch -d coins        borra la branch coins (no borra los commits de la branch, sólo su etiqueta)
+                           (si se uso merge antes de borrar, los commits pueden ser alcanzados desde el merge)
+
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+Combination of two branches
+Diagram represent the structure tree
