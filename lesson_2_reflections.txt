@@ -31,7 +31,7 @@ git checkout -b new_branch_name
 es igual a correr los siguientes 2 comandos:
 git branch new_branch_name
 git checkout new_branch_name
-git log --graph --oneline master coins muestra un gráfico con master branch y easy_mode branch
+git log --graph --oneline master coins muestra un gráfico con master branch y coins branch
 
 How do the diagrams help you visualize the branch structure?
 Branche structure is a tree; therefore, by using diagrams you can actually see the tree.
@@ -48,3 +48,10 @@ git branch -d coins        borra la branch coins (no borra los commits de la bra
 What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
 Combination of two branches
 Diagram represent the structure tree
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+Automatic: no doubt about what lines to include
+Manually: doubts about whay lines to include, you have to solve it
+          open the conflicted file; git has divided it in three parts: head(current checkout branch), latest common ancestor and other branch to merge
+          you have to change the file in order to contain what you want (you also have to erase the separations)
+          once you have updated the conflicted files, you have to put them in the stage area and commit them
