@@ -1,0 +1,4 @@
+ git remote shows      remote repositories
+ git remote add origin https://github.com/jemartinezc/reflections.git            add a remote repository called origin
+ git remote -v         muestr detalles de los repositorios remotos
+ git push origin master   sube la branch master al repositorio remoto origin
