@@ -1,4 +1,9 @@
- git remote shows      remote repositories
- git remote add origin https://github.com/jemartinezc/reflections.git            add a remote repository called origin
- git remote -v         muestr detalles de los repositorios remotos
+ git remote show      remote repositories
+ git remote add origin https://github.com/jemartinezc/reflections.git            add a remote repository called origin (el repositorio remoto fue creado manulamente en git hub)
+ git remote -v         muestra detalles de los repositorios remotos
  git push origin master   sube la branch master al repositorio remoto origin
+
+git pull origin master baja de origin la rama master a la rama master local
+
+Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
+Because you know when it a good point to update changes on the web
