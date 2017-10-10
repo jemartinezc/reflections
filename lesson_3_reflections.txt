@@ -7,3 +7,19 @@ git pull origin master baja de origin la rama master a la rama master local
 
 Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
 Because you know when it a good point to update changes on the web
+
+Presionar fork en un repositorio copia el repositorio en tu github, de esta forma tienes tu propia versión para modificar sin tener que hacer cambios en el original y referenciando el original. Después de hacer fork se clona el repositorio para empezar a modificarlo
+Cuando de clona un repositorio no es necesario indicar cual es el remoto origin, ya viene por default
+Si se quiere añadir un colaborador en github, se debe añadir maualmente desde la web. Los colaboradores pueden hacer push a tu remoto en github
+
+Para añadir un nuevo archivo a un repositorio existente en git hub
+clonar el repositorio, en caso de no ser colaborador (de no tener permiso para hacer push) hacer fork y después clonarlo
+crear el archivo localmente
+añadirlo a la staging area
+hacer commit
+y dar git push origin master
+
+Describe the differences between forks, clones, and branches. When would you use one instead of another?
+Clones son copias locales de repositorios
+forks son copias en github de repositorios 
+barnches son ramas locales de nuestros repositorios locales
