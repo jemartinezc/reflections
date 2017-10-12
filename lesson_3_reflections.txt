@@ -23,3 +23,26 @@ Describe the differences between forks, clones, and branches. When would you use
 Clones son copias locales de repositorios
 forks son copias en github de repositorios 
 barnches son ramas locales de nuestros repositorios locales
+
+
+Cuando se hace clone, pull o push, el último commit local apunta a su origin (a su remoto) (es decir, con esto se indica en cual commit se tuvo información del origin remoto)
+Si se tienen commits adelante de uno que apunta al remoto se puede utilizar git fetch, de esta manera no se modificaría el último commit local (esto es útil cuando ha habido cambios en linea que pueden conflictuar con los cambios locales)
+Al usar git fetch se crea una rama que parte del último commit local que apunta al remoto. Entonces con esto se puede ver que diferencias hay entre esa nueva rama y el último commit local
+
+Localmente se le conoce como origin/master (en caso de un sólo remoto con nombre origin) al último commit que apunta al remoto
+
+con git status se puede mostrar que el master local está:
+Ahead: master/origin no es igual al último commit
+Out of sync: cuando se da git fetch se crea una nueva rama a partit de origin/master, se puede dar el caso de que origin master no se el último commit. Esa nueva rama contiene un nuevo commit que corresponde a la última versión del remoto, y es ahora origin/master. Si el último commit no era origin/master, entonces ese último commit no está en el mismo cmaino (en el árbol, es decit, origin/master tiene commits que no tiene el último commit) que origin/master, por lo tanto están out of sync
+
+git pull origin master siempre hace fetch. Con eso actualiza origin master. Después hace merger entre origin/master y master.
+Si origin/master y master están en el mismo camino se hace un fast-forward merge, y no es necesario hacer un commit con ese merge.
+Si origin/master y master no están en el mismo camino, se tiene que hace commit para ese merge, y posiblemente hacer resolución de conflictos
+
+
+git pull origin master is equals to 
+git fecth origin
+git merge master origin/master
+
+What is the benefit of having a copy of the last known state of the remote stored locally?
+You can know what the last valid public version, and therefore, any differences between your last commit and the last public version can be resolved
